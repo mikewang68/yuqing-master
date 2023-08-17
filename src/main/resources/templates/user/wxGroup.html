@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href=" ../assets/images/djtu.png">
+    <title>联系我们·网络情报分析系统</title>
+    <script th:src="@{/common/analyze-cloud.js}"></script>
+    <!-- Custom CSS -->
+    <link href=" ../dist/css/style.min.css" rel="stylesheet">
+    <link href=" ../dist/css/custom.css" rel="stylesheet">
+    <link href="../assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="../assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!--<script src="//at.alicdn.com/t/font_1709263_w16payhc3l.js"></script>-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div id="main-wrapper">
+    <div th:replace="common/header::header"></div>
+    <div th:replace="common/setting_left::setting_left"></div>
+    <div class="page-wrapper">
+
+        <div class="right-part right-content">
+            <!-- nav start-->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-lg-5 align-self-center">
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">系统设置</li>
+                                    <li class="breadcrumb-item">联系我们</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 align-self-center ">
+                    </div>
+                </div>
+            </div>
+            <!-- nav end-->
+            <div class="p-20">
+                <div class="card">
+                    <div class="card-body  p-0">
+                        <div class="usercenter-list-box" style="height: 75vh">
+                            <div style="position: absolute;top: 50%;transform: translateY(-50%);width: 100%;">
+                                <div style="text-align: center;margin-bottom: 80px;">
+                                    <h4 style="font-size: 24px;margin-bottom: 40px;">联系我们</h4>
+                                    <p style="font-size: 18px">想要进一步了解 <a id="gitee2"><span style="color: blue;font-weight: bold">與情管理系统</span></a> ? 欢迎通过如下方式联系我们。</p>
+                                </div>
+                                <div style="display: flex;justify-content: space-around;">
+                                    <div style="text-align: center">
+                                        <h5>学校公众号</h5>
+                                        <img style="width: 150px" th:src="@{/assets/images/users/wxOfficialAccount.jpg}">
+                                    </div>
+
+                                    <div style="text-align: left;font-size: 20px">
+                                        <p><svg t="1645616433087" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5234" width="200" height="200"><path d="M876.557442 210.565089H144.379094c-44.805222 0-81.256563 36.450318-81.256564 81.256563v514.471659c0 44.805222 36.450318 81.256563 81.256564 81.256563h732.178348c44.805222 0 81.256563-36.450318 81.256563-81.256563v-514.471659c0-44.806246-36.450318-81.256563-81.256563-81.256563z m0 55.918473c4.118067 0 8.004735 0.993169 11.44499 2.741965l-377.534164 272.261346-377.53826-272.255203a25.159934 25.159934 0 0 1 11.450109-2.748108h732.177325z m0 565.147839H144.379094c-13.965796 0-25.33809-11.372294-25.338091-25.33809V328.15627l391.427265 282.272898 391.427264-282.282112v478.146255c0 13.965796-11.35796 25.33809-25.33809 25.33809z" fill="#2c2c2c" p-id="5235"></path></svg>
+                                            djtu@qq.com</p>
+
+                                        <p><svg t="1645618144633" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13635" width="200" height="200"><path d="M559.2 66.3C274.5 37.1 36.9 274.7 66.1 559.4c20.3 197.8 200.6 378.1 398.4 398.4C749.2 987 986.8 749.4 957.6 464.7 937.3 266.9 757 86.6 559.2 66.3zM832 298.6l42.7 85.4c-57.2-10.8-73-10.3-128.1 0-32.6 8.6-49.6 31.9-57.6 47.9-4.1 8.2-6.1 17.3-5.7 26.5 1.1 27.2 0 99.9-43.4 117.7-19.2 7.9-42.7-19.1-42.7-42.7 3-134.5 63.8-160.8 80.4-169.4 17.4-9 69-44 69-44 37.4-19 85.4-21.4 85.4-21.4zM319.8 191.9l26.7 26.7c7.1 7.1 5.3 19.1-3.6 23.8-24.7 13.2-68.4 47.2-104.7 132.4-2.4 5.5-7.8 9.1-13.8 9.1h-54c0 0.1 3.6-112.6 149.4-192z m-4.4 648.9l-95.5-80c10.8-21.6 33.5-36.1 59.5-35.3 33.3 1.1 60.5 28.1 61.8 61.4 0.7 22.1-9.6 41.8-25.8 53.9z m196.4 55.4c-48.1 0-93.9-9.2-136.3-25.3 18.3-22.2 29.6-50.4 29.6-81.4 0-70.7-57.3-128.1-128.1-128.1-38.6 0-73.1 17.3-96.6 44.3-33.4-56.9-52.8-123-52.8-193.7 0-16 1.3-31.7 3.2-47.3L275 450.3c13.1-1.3 23.8-10.9 26.4-23.8 18.2-89 98.2-145.4 148.1-172.6 18.6-10.1 21.1-35.8 4.9-49.4l-66.9-55.7c39-13.4 80.7-20.9 124.3-20.9 104.8 0 199.7 42.1 269 110.1l-93 37.2S469.1 387.5 533.2 554.7c21.5 50.2 60.1 81 95.2 81 77.5 0 121.9-69 118.2-166.4 14.5-14.9 19-14.3 42.7-21.3 49.7-8.3 66 6.7 104.1 20.3 1.6 14.4 2.7 28.9 2.7 43.7C896 724.2 724 896.2 511.8 896.2z" fill="#2c2c2c" p-id="13636"></path></svg>
+                                            <a id="officialWebsite"><span style="color: blue;text-decoration: underline">https://gs.djtu.edu.cn/</span></a></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+<!--                    <div class="card-body  p-0">-->
+<!--                        <div class="usercenter-list-box">-->
+<!--                            <div class="usercenter-title">-->
+<!--                                <img style="width: 310px;" th:src="@{/assets/images/users/wxGroup.jpg}">-->
+<!--                                <div>-->
+<!--                                    <h5 style="text-align: center">系统使用中有任何问题请进微信交流群</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- footer start  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer end  -->
+        <!-- ============================================================== -->
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src=" ../assets/libs/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src=" ../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+<script src=" ../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- apps -->
+<script src=" ../dist/js/app.min.js"></script>
+<script src=" ../dist/js/app.init.light-sidebar.js"></script>
+<script src=" ../dist/js/app-style-switcher.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src=" ../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+<script src=" ../assets/extra-libs/sparkline/sparkline.js"></script>
+<!--Wave Effects -->
+<script src=" ../dist/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src=" ../dist/js/sidebarmenu.js"></script>
+<!--Custom JavaScript -->
+<script src=" ../dist/js/custom.min.js"></script>
+<!-- this pages -->
+<script src="../dist/js/projectlist.js"></script>
+<script src="../dist/js/pages.js"></script>
+<!-- 右上角提示 -->
+<script src="../assets/libs/block-ui/jquery.blockUI.js"></script>
+<script th:src="@{/dist/baidu/baidu_statistics.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+    $("#currentyear").text((new Date()).getFullYear());
+
+    var gitee2 = document.getElementById("gitee2");
+    // 跳转到gitee源码
+    gitee2.onclick = function(){
+        window.open("https://gitee.com/stonedtx/yuqing");
+    };
+
+    var officialWebsite = document.getElementById("officialWebsite");
+    // 跳转到公司官网
+    officialWebsite.onclick = function(){
+        window.open("https://gs.djtu.edu.cn/");
+    };
+
+    $(function(){
+        getuser()
+    });
+
+    function goedit(param) {
+        $("#changepassword").show()
+    }
+    $("#canle").click(function (param) {
+        $("#changepassword").hide()
+    })
+
+
+    function getMyDate(str){
+        var oDate = new Date(str),
+            oYear = oDate.getFullYear(),
+            oMonth = oDate.getMonth()+1,
+            oDay = oDate.getDate(),
+            oHour = oDate.getHours(),
+            oMin = oDate.getMinutes(),
+            oSen = oDate.getSeconds(),
+            oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+
+                getzf(oMin) +':'+getzf(oSen);//最后拼接时间
+        return oTime;
+    };
+    //补0操作
+    function getzf(num){
+        if(parseInt(num) < 10){
+            num = '0'+num;
+        }
+        return num;
+    }
+
+    $('.navLi').click(function(){
+        jumpNavLocation($(this).data('type'), null, null);
+    })
+</script>
+</body>
+
+</html>

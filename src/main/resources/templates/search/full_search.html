@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/assets/images/djtu.png}">
+    <title>热点预知·网络情报分析系统</title>
+    <link th:href="@{/dist/css/style.min.css}" rel="stylesheet">
+    <link th:href="@{/dist/css/custom.css}" rel="stylesheet">
+    <link th:href="@{/assets/libs/sweetalert2/dist/sweetalert2.min.css}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css}">
+    <script th:src="@{/common/analyze-cloud.js}"></script>
+
+    <div id="main-wrapper">
+        <div th:replace="common/header::header"></div>
+    </div>
+        <html dir="ltr" lang="en" class="no-outlines">
+        <head>
+
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- ==== Document Title ==== -->
+            <title>Bootstrap全屏日历拖拽事件插件</title>
+
+            <!-- ==== Document Meta ==== -->
+            <meta name="author" content="">
+            <meta name="description" content="">
+            <meta name="keywords" content="">
+
+            <!-- Stylesheets -->
+            <link rel="stylesheet" href="assets/libs/Bootstrap-calendar/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/libs/Bootstrap-calendar/assets/css/fontawesome-all.min.css">
+
+            <link rel="stylesheet" href="assets/libs/Bootstrap-calendar/assets/css/fullcalendar.min.css">
+            <link rel="stylesheet" href="assets/libs/Bootstrap-calendar/assets/css/style.css">
+            <!-- Page Level Stylesheets -->
+        </head>
+        <body>
+        <div class="panel bg-input-grey">
+
+            <div class="panel-content">
+                <div class="row">
+                    <div class="col-lg-3 d-none d-lg-block">
+                        <!-- Calendar Events Start -->
+                        <div class="calendar--events">
+                            <h4 class="h4">拖拽事件</h4>
+                            <div class="fc-events">
+                                <div class="fc-event label-green">热点事件</div>
+                                <div class="fc-event label-orange">节日</div>
+                                <div class="fc-event label-red">二十四节气</div>
+                                <div class="fc-event label-blue">关键词</div>
+                            </div>
+                            <label class="form-check">
+                                <input type="checkbox" name="is_removeable" value="1" class="form-check-input">
+                                <span class="form-check-label">拖拽后移除</span>
+                            </label>
+                            <hr>
+                            <h4 class="h4">创建事件</h4>
+                            <ul class="calendar--event__colors">
+                                <li class="label-green active"></li>
+                                <li class="label-orange"></li>
+                                <li class="label-blue"></li>
+                                <li class="label-red"></li>
+                                <li class="label-black"></li>
+                                <li class="label-gray"></li>
+                            </ul>
+                            <form action="#" class="mt-4 pt-1">
+                                <input type="text" class="form-control" placeholder="Event Title..." required>
+                                <button type="submit" class="btn btn-danger btn-rounded mt-3">添加</button>
+                            </form>
+                        </div>
+                        <!-- Calendar Events End -->
+                    </div>
+                    <div class="col-lg-9">
+                        <!-- Calendar Start -->
+                        <div id="calendarApp" class="calendar--app"></div>
+                        <!-- Calendar End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text bg-white " id="text" style="color: #1b1e21">
+
+                    <h2>本月热点新闻</h2>
+                    <p>-----------------------------------------------------------------------------------------------------</p>
+                    <h4>1.推动数字经济与市场经济融合</h4>
+                    <p>"百城千园行"暨工业互联网进园区活动在河北石家庄经开区与8月12日开展</p>
+                    <h4>2.财政部、应急管理部：紧急预拨14.6亿元支持京津冀黑吉防汛救灾。</h4>
+                    <p></p>
+                    <h4>3.气象局宣布：将用三年时间，把我国气象探空业务全面升级为北斗探空系统。</h4>
+                    <p></p>
+                    <h4>4.医药反腐风暴已深入医保领域，多名医保局长被带走调查。</h4>
+                    <p>
+                    </p>
+                    <h4>5.河北：全省超388万人受洪涝灾害，直接经济损失958亿元，全省因灾死亡29人，还有16人失联，计划用两年完成重建。
+                    </h4>
+                    <p></p>
+                    <h4>6.广东：鼓励快递和外卖配送人员等参与群防群治工作，使用单位可根据实际给予成员适当补贴。
+                    </h4>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="assets/libs/Bootstrap-calendar/assets/js/jquery.min.js"></script>
+        <script src="assets/libs/Bootstrap-calendar/assets/js/jquery-ui.min.js"></script>
+
+        <!-- Page Level Scripts -->
+        <script src="assets/libs/Bootstrap-calendar/assets/js/moment.min.js"></script>
+        <script src="assets/libs/Bootstrap-calendar/assets/js/fullcalendar.js"></script>
+        <script src="assets/libs/Bootstrap-calendar/assets/js/page/calendar.js"></script>
+        <script src="assets/libs/Bootstrap-calendar/assets/js/locale-all.js"></script>
+        </body>
+        </html>
+
+<body>
+<script th:src=" @{/dist/js/app.min.js}"></script>
+<script th:src=" @{/dist/js/app.init.light-sidebar.js}"></script>
+<script th:src=" @{/dist/js/app-style-switcher.js}"></script>
+<script th:src="@{/assets/libs/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/assets/libs/popper.js/dist/umd/popper.min.js}"></script>
+<script th:src="@{/assets/libs/bootstrap/dist/js/bootstrap.min.js}"></script>
+<script th:src="@{/dist/js/app.min.js}"></script>
+<script th:src="@{/dist/js/app.init.light-sidebar.js}"></script>
+<script th:src="@{/dist/js/app-style-switcher.js}"></script>
+<script th:src="@{/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js}"></script>
+<script th:src="@{/assets/extra-libs/sparkline/sparkline.js}"></script>
+<script th:src="@{/dist/js/waves.js}"></script>
+<script th:src="@{/dist/js/sidebarmenu.js}"></script>
+<script th:src="@{/dist/js/custom.min.js}"></script>
+<script th:src="@{/assets/libs/sweetalert2/dist/sweetalert2.all.min.js}"></script>
+<script th:src="@{/dist/baidu/baidu_statistics.js}"></script>
+<script th:src="@{/dist/js/pages.js}"></script>
+<script th:src="@{/assets/libs/block-ui/jquery.blockUI.js}"></script>
+<script th:inline="javascript">
+    $('body').on('click', '.projectCheck', function () {
+        $('.projectCheck').each(function () {
+            if (!$(this).is(":checked")) {
+                $('#cstall').prop('checked', false);
+                return;
+            }
+        });
+    });
+
+    // 	// 顶部面包屑导航
+    //    function breadCrumbs(groupId){
+    // 		if(groupId){
+    // 			$.ajax({
+    //	    		url: ctxPath + 'project/names',
+    //	    		type: 'post',
+    //	    		dataType: 'json',
+    //	    		data: {
+    //	    			projectId: null,
+    //	    			groupId: groupId
+    //	    		},
+    //	    		success: function(res){
+    //	    			var html = '<li class="breadcrumb-item">监测管理</li>'+
+    //	    						'<li class="breadcrumb-item">'+res.groupName+'</li>'+
+    //	                        	'<li class="breadcrumb-item">方案列表</li>';
+    //	    			$('#breadCrumbs').html(html);
+    //	    			$('#groupName').html(res.groupName);
+    //	    		},
+    //	    		error: function(res){
+    //	    			console.log(res);
+    //                    var html = '<li class="breadcrumb-item">监测管理</li>'+
+    //                        '<li class="breadcrumb-item">暂无方案组</li>'+
+    //                        '<li class="breadcrumb-item">方案列表</li>';
+    //                    $('#breadCrumbs').html(html);
+    //                    $("#cstall").attr("disabled","disabled");
+    //                    $("#cst0").attr("disabled","disabled");
+    //	    		}
+    //	    	});
+    // 		}else{
+    // 			var html = '<li class="breadcrumb-item">监测管理</li>'+
+    //			             '<li class="breadcrumb-item">方案列表</li>';
+    // 			$('#breadCrumbs').html(html);
+    // 		}
+    // 	}
+
+    $('.navLi').click(function(){
+        jumpNavLocation($(this).data('type'), groupid, null);
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="assets/libs/jquery-calendar/css/SYSUI.css" />
+		<link rel="stylesheet" href="assets/libs/jquery-calendar/css/style.css" />
+		<link rel="stylesheet" href="assets/libs/jquery-calendar/css/moldbox.css" />
+		<link rel="stylesheet" href="assets/libs/jquery-calendar/css/record.css" />
+		<script src="assets/libs/jquery-calendar/js/syntaxhighlighter_3.0.83/shCore.js"></script>
+		<script src="assets/libs/jquery-calendar/js/syntaxhighlighter_3.0.83/shBrushJScript.js"></script>
+		<link href="assets/libs/jquery-calendar/js/syntaxhighlighter_3.0.83/styles/shCoreRDark.css" rel="stylesheet" />
+		<script type="text/javascript" src="assets/libs/jquery-calendar/js/SYSUI.js"></script>
+		<script type="text/javascript" src="assets/libs/jquery-calendar/js/box.js" ></script>
+        <script src="assets/libs/jquery-calendar/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="assets/libs/jquery-calendar/js/sys-calendar.js"></script>
+		<title></title>
+		<style type="text/css">
+			.pagescroll{position: relative; z-index: 1;padding: 15px;}
+			.pageModule:before{position: absolute; z-index: 0; content: '';width: 100%; height: 450px;background: #0885D1; top:0px; left: 0px;}
+			.calendar{background: #FFFFFF; margin: auto; box-shadow: 0px 3px 6px rgba(0,0,0,0.4);}
+			.pagetitle{color: #FFFFFF;font-size: 36px; font-weight: bold; text-align: center; width: 1200px;margin: 0 auto; margin-bottom: 50px;}
+			.content{width: 1200px;margin: 0 auto; margin-top: 50px; background: #FFFFFF;}
+			.title-name{ text-align: left;}
+		</style>
+	</head>
+
+	<body id="pageModule" class="pageModule">
+		<div id="pagescroll" class="pagescroll">
+		<div class="pagetitle">sys-calendar.js<p style="font-size: 18px;">jquery日历插件,自定义点击事件，记录信息，编辑假日安排等方法，使用简单，更新1.0版本，不定期更新版本，如需获取最新版本，请关注本网站WWW.husysui.com</p></div>
+		<div id="calendar"></div>
+		<div class="content">
+			<div class="mb15">
+				<div class="title-name">说明</div>
+				 <div class="info">
+				 	该插件还使用了sysui.js框架插件进行配置，该js具体说明在以后会发布，请关注我的网站
+				 </div>
+			</div>
+			<div class="mb15">
+				<div class="title-name">基础引用</div>
+				<pre class="brush:js">
+					<link rel="stylesheet" href="css/record.css" />	
+					<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+					<script type="text/javascript" src="js/sys-calendar.js"></script>           
+				 </pre>
+				 <div class="info">
+				 	引入3个文件，一个css样式文件，两个js文件一个jquery库，另外一个就是日历插件的js
+				 </div>
+			</div>
+			<div class="mb15">
+				<div class="title-name">基础html</div>
+				<pre class="brush:js">
+					   <div id="calendar"></div>//根据id来显示
+					   <script type="text/javascript">
+					   	$("#calendar").calendar({
+					   		//参数设置
+					   	})
+					   </script>
+				 </pre>
+				 <div class="info">
+				 	先为calendar准备一个容器，可以设置大小，也可以在options中设置，不设置的话自动设为默认
+				 </div>
+			</div>
+			<div class="mb15">
+				<div class="title-name">参数配置说明</div>
+				<pre class="brush:js">
+					   <script type="text/javascript">
+					   	$("#calendar").calendar({
+					   		data: data, //获取记录数据
+							holiday: holidaydata, //规划假日时间
+							work:workdata,//规划上班时间
+							mode: "month",//显示模式，month为月份详细显示， year为年显示
+							width:600,//日历宽度，如果不填则默认全屏模式
+							showModeBtn: false,//是否显示月/年却换模式
+                            showEvent: true,//设置年份显示记录信息，为true显示每月记录信息，为false不显示记录信息
+							newDate: "2018-04-1", //设置初始开始时间，默认不填为当前时间
+							cellClick: function(data, Event, me) {
+								//点击每天的处理方法，用户自己编辑方法
+								//data 数据
+								// Event 当前事件
+								//me 方法集合
+							var module = document.body.querySelector(".calendar-box");
+								module ? module.parentNode.removeChild(module) : "";
+								if(data == undefined) {
+									set.PromptBox("无历史记录", 2, false);
+								} else {
+									var mun = data.length;
+									var box = document.createElement("div");
+									box.id = "calendar-box";
+									lay.el[0].appendChild(box).className = "calendar-box";
+									for(var i = 0; i < mun; i++) {
+										var mousename = document.createElement("a");
+										mousename.className = "record_info";
+										mousename.href = "javascript:;";
+										box.appendChild(mousename).innerHTML = data[i].name;
+									}
+									var laybox = $(lay.el[0]).outerWidth();
+									var objTop = lay.getOffsetTop(set.$('#calendar-box')); //对象x位置
+									var objLeft =lay.getOffsetLeft(set.$('#calendar-box')); //对象y位置
+									var mouseX = me.clientX + document.body.scrollLeft; //鼠标x位置
+									var mouseY = me.clientY + document.body.scrollTop; //鼠标y位置
+									var objX = mouseX - objLeft;
+									var objY = mouseY - objTop;
+									box.style.cssText = "display:block" + "; left:" + objX + "px" + ";" + "top:" + objY + "px";
+									var infoh = $(".record_info").outerHeight()+10 * mun;
+									var boxh = $(".calendar-box").outerHeight();
+									var boxgap = laybox - mouseX;
+									var boxw = $(box).outerWidth();
+									if(boxgap <= boxw) {
+										box.style.cssText = "display:block" + "; left:" + (objX - boxw) + "px" + ";" + "top:" + objY + "px";
+									}
+									if(infoh < boxh) {
+										box.style.cssText += 'height:' + infoh + 'px;';
+									} else {
+										box.style.cssText += 'bottom:15px';
+										$(".calendar-box").niceScroll({
+											cursorcolor: "#dddddd",
+											cursoropacitymax: 1,
+											touchbehavior: false,
+											cursorwidth: "3px",
+											cursorborder: "0",
+											cursorborderradius: "3px",
+										});
+									}
+								}
+							},
+							monthClick: function(Event, nextMonth, opts, me) {
+								// Event 当前事件  nextMonth月份，opts参数 ，me集合
+								//点击月份的处理方法
+								//开始月份第一天
+								var start = me._cloneDate(opts.newDate);
+								start.setDate(1);
+								// 获取当前月的最后一天
+								var date = new Date();
+								var nextMonthFirstDay = new Date(date.getFullYear(), nextMonth, 1);
+								var oneDay = 1000 * 60 * 60 * 24;
+								var end = new Date(nextMonthFirstDay - oneDay);
+								var startDate = me.transferDate(start); // 日期变换
+								var endDate = me.transferDate(end); // 日期变换
+								var cycleData = [{
+									'name': "145",
+									'startDate': "2020-2-09 15:31:29",
+									'type': "手机号"
+								}, {
+									'name': "178956874",
+									'startDate': "2020-2-23 15:31:29",
+									'type': "手机号"
+								}]//数据结构，以往记录数据，可通过ajax获取
+								me._refreshCalendar(opts.newDate, cycleData);//加载方法
+							}
+					   	})
+					     </script>
+				 </pre>
+				 <div class="info">
+				 	基础配置插件方法,改为简答的示例
+				 </div>
+			</div>
+			<div class="mb15">
+				<div class="title-name">数据格式</div>
+				<pre class="brush:js">
+					//记录保存格式
+				    {
+						'name': "145",//名称
+						'startDate': "2020-3-09 15:31:29",//时间
+						'type': "手机号"//类型
+					}
+					//假日格式
+					{
+						"holiday_name":"春节", //节日名称
+						"holiday_time":[
+							"2020-1-24",
+							"2020-1-25",
+							"2020-1-26",
+							"2020-1-27",
+							"2020-1-28",
+							"2020-1-29",
+							"2020-1-30",
+							"2020-1-31",
+							"2020-2-1",
+							"2020-2-2"
+							]//节日时间}
+				   //工作时间格式
+				   [
+					      "2020-4-26",
+					      "2020-5-9",
+					      "2020-6-28",
+					      "2020-9-27",
+					      "2020-10-10"
+					]//直接编辑当前日期
+				 </pre>
+				 <div class="info">
+				 	json格式，该数据格式为定死的格式。
+				 </div>
+			</div>
+			
+		</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript">
+	new SYSUI({
+		Module: '#pageModule',
+		Method: [{'module': '#calendar',event: function(set, obj) {
+			var m=set.$(set.par.Module);
+			m.style.height=set.height()+'px';
+			m.style.width=set.width()+'px';
+			var scrollDiv=set.$("#pagescroll");
+			set.scrollbar(set,m,scrollDiv);//滚动条调用方法
+			//日历方法
+			var data = [{
+		'name': "145",
+		'startDate': "2020-3-09 15:31:29",
+		'type': "手机号"
+	}, {
+		'name': "178956874",
+		'startDate': "2020-3-23 15:31:29",
+		'type': "手机号"
+	}, {
+		'name': "信息编辑",
+		'startDate': "2020-3-20 15:31:29",
+		'type': "手机号"
+	}];
+	var workdata=[
+	      "2020-4-26",
+	      "2020-5-9",
+	      "2020-6-28",
+	      "2020-9-27",
+	      "2020-10-10"
+	]
+	var holidaydata = [{
+		"holiday_name":"春节",
+		"holiday_time":[
+			"2020-1-24",
+			"2020-1-25",
+			"2020-1-26",
+			"2020-1-27",
+			"2020-1-28",
+			"2020-1-29",
+			"2020-1-30",
+			"2020-1-31",
+			"2020-2-1",
+			"2020-2-2"
+			]},{
+		"holiday_name":"清明节",
+		"holiday_time":[
+			"2020-4-4",
+			"2020-4-5",
+			"2020-4-6"
+			]},{
+		"holiday_name":"劳动节",
+		"holiday_time":[
+			"2020-5-1",
+			"2020-5-2",
+			"2020-5-3",
+			"2020-5-4",
+			"2020-5-5"
+		]},{
+		"holiday_name":"端午节",
+		"holiday_time":[
+			"2020-6-25",
+			"2020-6-26",
+			"2020-6-27"
+		]},{
+		"holiday_name":"国庆节、中秋节",
+		"holiday_time":[
+			"2020-10-1",
+			"2020-10-2",
+			"2020-10-3",
+			"2020-10-4",
+			"2020-10-5",
+			"2020-10-6",
+			"2020-10-7",
+			"2020-10-8"
+		]}];
+				$("#calendar").calendar({
+					data: data, //记录数据
+					holiday: holidaydata, //假日规划时间
+					work:workdata,//上班时间
+					mode: "month",
+					width:600,
+					cellClick: function(data, me, lay) {
+						var module = document.body.querySelector(".calendar-box");
+						module ? module.parentNode.removeChild(module) : "";
+						if(data == undefined) {
+							set.PromptBox("无历史记录", 2, false);
+						} else {
+							var mun = data.length;
+							var box = document.createElement("div");
+							box.id = "calendar-box";
+							lay.el[0].appendChild(box).className = "calendar-box";
+							for(var i = 0; i < mun; i++) {
+								var mousename = document.createElement("a");
+								mousename.className = "record_info";
+								mousename.href = "javascript:;";
+								box.appendChild(mousename).innerHTML = data[i].name;
+							}
+							var laybox = $(lay.el[0]).outerWidth();
+							var objTop = lay.getOffsetTop(set.$('#calendar-box')); //对象x位置
+							var objLeft =lay.getOffsetLeft(set.$('#calendar-box')); //对象y位置
+							var mouseX = me.clientX + document.body.scrollLeft; //鼠标x位置
+							var mouseY = me.clientY + document.body.scrollTop; //鼠标y位置
+							var objX = mouseX - objLeft;
+							var objY = mouseY - objTop;
+							box.style.cssText = "display:block" + "; left:" + objX + "px" + ";" + "top:" + objY + "px";
+							var infoh = $(".record_info").outerHeight()+10 * mun;
+							var boxh = $(".calendar-box").outerHeight();
+							var boxgap = laybox - mouseX;
+							var boxw = $(box).outerWidth();
+							if(boxgap <= boxw) {
+								box.style.cssText = "display:block" + "; left:" + (objX - boxw) + "px" + ";" + "top:" + objY + "px";
+							}
+							if(infoh < boxh) {
+								box.style.cssText += 'height:' + infoh + 'px;';
+							} else {
+								box.style.cssText += 'bottom:15px';
+							}
+						}
+					},
+					monthClick: function(e, nextMonth, opts, me) {
+						//开始月份第一天
+						var start = me._cloneDate(opts.newDate);
+						start.setDate(1);
+						// 获取当前月的最后一天
+						var date = new Date();
+						var nextMonthFirstDay = new Date(date.getFullYear(), nextMonth, 1);
+						var oneDay = 1000 * 60 * 60 * 24;
+						var end = new Date(nextMonthFirstDay - oneDay);
+						var startDate = me.transferDate(start); // 日期变换
+						var endDate = me.transferDate(end); // 日期变换
+						var cycleData = [{
+							'name': "145",
+							'startDate': "2020-2-09 15:31:29",
+							'type': "手机号"
+						}, {
+							'name': "178956874",
+							'startDate': "2020-2-23 15:31:29",
+							'type': "手机号"
+						}]//
+						me._refreshCalendar(opts.newDate, cycleData);
+					}
+				});
+			}
+		}]
+	})
+</script>
