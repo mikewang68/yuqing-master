@@ -88,14 +88,23 @@
                         <span class="d-block d-md-none">事件分析</span>
                     </a>
                 </li>
-                <li data-type="full_search" th:classappend="${menu=='full_search'?'nav-active3':''}"
-                    class="nav-item dropdown hover-none navLi">
+                <li class="nav-item dropdown">
                     <a style="display: block; position: absolute; font-size: 12px; color: #fff; margin-left: 76px; margin-top: 6px; background-color: #fe475d; width: 25px; height: 17px; border-radius: 45%; padding-left: 7px;transform: scale(0.9);">新</a>
-                    <a class="nav-link dropdown-toggle waves-effect  waves-dark">
-                        <span class="d-none d-md-block"> <i class="fa fa-search"></i> 热点预知</span>
-                        <span class="d-block d-md-none">热点预知</span>
+                    <a class="nav-link dropdown-toggle waves-effect  waves-dark"
+                       th:href="@{/fullsearch}">
+                        <i class="fa fa-search"></i>
+                        <span>热点搜索</span>
                     </a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a style="display: block; position: absolute; font-size: 12px; color: #fff; margin-left: 76px; margin-top: 6px; background-color: #fe475d; width: 25px; height: 17px; border-radius: 45%; padding-left: 7px;transform: scale(0.9);">新</a>
+                    <a class="nav-link dropdown-toggle waves-effect  waves-dark"
+                       th:href="@{/timelysearch}">
+                        <i class="mdi mdi-message-text-outline"></i>
+                        <span>热点预知</span>
+                    </a>
+                </li>
+
                 <!-- 				<li th:classappend="${menu=='account'?'nav-active3':''}" class="nav-item dropdown hover-transparent"> -->
                 <!-- 	                <a class="nav-link dropdown-toggle waves-effect hover-transparent waves-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                 <!-- 	                 <span class="d-none d-md-block">账号监测 <i class="fa fa-angle-down"></i></span> -->
@@ -513,6 +522,8 @@
                 window.location.href = ctxPath + 'publicoption';
             }else if (menu == 'syswarning') {
                 window.location.href = ctxPath + '/system/warning';
+            }else if (menu == 'push') {
+                window.location.href = ctxPath + 'push'+ param;
             }
         }
 
