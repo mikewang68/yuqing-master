@@ -47,9 +47,9 @@
             <div class="row">
                 <div class="col-lg-3 d-none d-lg-block">
                     <!-- Calendar Events Start -->
-                    <div class="calendar--events">
+                    <div class="calendar--events" style="margin-top: 40px">
                         <h4 class="h4">拖拽事件</h4>
-                        <div class="fc-events">
+                        <div class="fc-events" style="width: 172px">
                             <div class="fc-event label-green">热点事件</div>
                             <div class="fc-event label-orange">节日</div>
                             <div class="fc-event label-red">二十四节气</div>
@@ -76,9 +76,12 @@
                     </div>
                     <!-- Calendar Events End -->
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9" style="margin-top: 40px">
                     <!-- Calendar Start -->
                     <div id="calendarApp" class="calendar--app"></div>
+                    <script>
+                        $calendarApp.fullCalendar('removeEvents',[id]);
+                    </script>
                     <!-- Calendar End -->
                 </div>
             </div>
@@ -146,45 +149,9 @@
             }
         });
     });
-
-    // 	// 顶部面包屑导航
-    //    function breadCrumbs(groupId){
-    // 		if(groupId){
-    // 			$.ajax({
-    //	    		url: ctxPath + 'project/names',
-    //	    		type: 'post',
-    //	    		dataType: 'json',
-    //	    		data: {
-    //	    			projectId: null,
-    //	    			groupId: groupId
-    //	    		},
-    //	    		success: function(res){
-    //	    			var html = '<li class="breadcrumb-item">监测管理</li>'+
-    //	    						'<li class="breadcrumb-item">'+res.groupName+'</li>'+
-    //	                        	'<li class="breadcrumb-item">方案列表</li>';
-    //	    			$('#breadCrumbs').html(html);
-    //	    			$('#groupName').html(res.groupName);
-    //	    		},
-    //	    		error: function(res){
-    //	    			console.log(res);
-    //                    var html = '<li class="breadcrumb-item">监测管理</li>'+
-    //                        '<li class="breadcrumb-item">暂无方案组</li>'+
-    //                        '<li class="breadcrumb-item">方案列表</li>';
-    //                    $('#breadCrumbs').html(html);
-    //                    $("#cstall").attr("disabled","disabled");
-    //                    $("#cst0").attr("disabled","disabled");
-    //	    		}
-    //	    	});
-    // 		}else{
-    // 			var html = '<li class="breadcrumb-item">监测管理</li>'+
-    //			             '<li class="breadcrumb-item">方案列表</li>';
-    // 			$('#breadCrumbs').html(html);
-    // 		}
-    // 	}
-
     $('.navLi').click(function(){
         jumpNavLocation($(this).data('type'), groupid, null);
-    })
+    });
 </script>
 </body>
 
