@@ -78,7 +78,7 @@ sudo gedit /etc/profile
 
 这样打开的就不是命令行而是文本编辑器，可以方便复制粘贴和保存）
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps4.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%875.png) 
 
 3、输入下面代码行使修改的配置立刻生效 
 
@@ -90,7 +90,7 @@ source /etc/profile
 
 java -version
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps5.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%876.png) 
 
 如图所示jdk1.8就算安装完成。
 
@@ -172,7 +172,7 @@ Reload privilege tables now? (Press y|Y for Yes, any other key for No) : Y (我�
 
 systemctl status mysql.service
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps6.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%876.png) 
 
 如上现实即为配置成功
 
@@ -194,7 +194,7 @@ select  User,authentication_string,Host from user;
 
 当,root已经多了一条记录,且Host记录值为%,代表已经开启了root的远程访问权限,后续就可以通过root用户远程访问该MySQL了
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps7.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%878.png) 
 
  
 
@@ -222,7 +222,7 @@ redis 127.0.0.1:6379> ping PONG
 
 以上说明已经成功安装了redis
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps8.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%879.png) 
 
 Redis不需要安装远程连接，到上面这步即可。
 
@@ -234,11 +234,11 @@ Idea官网linux下载网址：选择tar.gz格式的压缩包，一定不带是ar
 
 解压后在idea目录的bin目录下打开命令行
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps9.jpg) 
+![]((https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%8710.png) 
 
 ./idea.sh
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps10.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%8711.png) 
 
 输入后idea就可以运行了，后面都是可视化界面按照自己喜好安装即可。
 
@@ -260,7 +260,7 @@ sudo apt-get install docker.io
 
 docker -v
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps11.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%8712.png) 
 
  
 
@@ -268,7 +268,7 @@ docker -v
 
 docker pull maydays/yuqing:latest
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps12.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%8713.png) 
 
  
 
@@ -278,7 +278,7 @@ docker pull maydays/yuqing:latest
 
 我下载的是3.8.1版本
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps13.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%8714.png) 
 
 之后到下载目录下打开终端进行解压tar.gz
 
@@ -294,7 +294,7 @@ PATH=$M2_HOME/bin:$PATH
 
 之后在idea中配置maven，打开Files，找到setting，选择build execution下打开build tools，选择maven进行配置
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps14.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%8715.png) 
 
 （注意要勾选override，然后变成自己的路径）之后apply再ok就配置好maven文件了。
 
@@ -306,7 +306,7 @@ p.s我之前之所以没数据还是因为我redis配置的问题，首先在终
 
 首先配置mysql，新建数据库链接输入内容如下：输入完后点击下方test connection，如有报错，可以尝试在命令行窗口先进入MySQL创建database名称如截图所示。
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps15.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%8716.png) 
 
 第二步安装官方yml配置手册配置yml文件下面附上我的举例：
 
