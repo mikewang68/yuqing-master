@@ -15,7 +15,7 @@ Sudo apt-get install openssh-server openssh-client
 安装完成后检查一下网口输入：
 netstat -lnt
 
-![[yuqing-master/ProIMG/图片1.png at main · mikewang68/yuqing-master (github.com)](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/图片1.png))
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%871.png)
 
 出现这个22端口即可，然后输入ifconfig查看网络端口号
 
