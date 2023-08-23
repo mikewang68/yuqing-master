@@ -19,7 +19,7 @@ netstat -lnt
 
 出现这个22端口即可，然后输入ifconfig查看网络端口号
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps1.jpg) 
+![](https://github.com/mikewang68/yuqing-master/tree/main/ProIMG)
 
 然后回到自己主机网页搜索Xftp 7下载安装然后左上角新建链接：名称随意，主机填写上面的网络端口号。在虚拟机上输入：
 
@@ -29,11 +29,10 @@ sudo ufw allow 22
 
 Ping 192.168就还是上面那个端口号
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps2.jpg) 
-
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%873.png)
 回到Xftp连接即可
 
-![img](file:///C:\Users\34720\AppData\Local\Temp\ksohtml11576\wps3.jpg) 
+![](https://github.com/mikewang68/yuqing-master/blob/main/ProIMG/%E5%9B%BE%E7%89%874.png) 
 
  
 
