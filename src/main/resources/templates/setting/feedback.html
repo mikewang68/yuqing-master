@@ -1,111 +1,65 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" type="image/png" sizes="16x16" th:href="@{/assets/images/djtu.png}">
-	<title>外媒情况·网络情报分析系统</title>
-	<link th:href="@{/dist/css/style.min.css}" rel="stylesheet">
-	<link th:href="@{/dist/css/custom.css}" rel="stylesheet">
-	<link th:href="@{/assets/libs/sweetalert2/dist/sweetalert2.min.css}" rel="stylesheet">
-	<link rel="stylesheet" type="text/css"
-		  th:href="@{/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css}">
-	<script th:src="@{/common/analyze-cloud.js}"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/assets/images/djtu.png}">
+    <title>外媒资讯·网络情报分析系统</title>
+    <link th:href="@{/dist/css/style.min.css}" rel="stylesheet">
+    <link th:href="@{/dist/css/custom.css}" rel="stylesheet">
+    <link th:href="@{/assets/libs/sweetalert2/dist/sweetalert2.min.css}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css}">
+    <script th:src="@{/common/analyze-cloud.js}"></script>
+<body>
+<div id="main-wrapper">
+    <div th:replace="common/header::header" style="margin-left: -1000px"></div>
+    <div th:replace="common/media_left::media_left"></div>
+</div>
+</body>
+</head>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>jquery圆形悬浮菜单展开多个</title>
 
-	<div id="main-wrapper">
-		<div th:replace="common/header::header"></div>
-		<div th:replace="common/media_left::media_left"></div>
-
-			<aside class="left-sidebar"  th:fragment="media_left">
-				<!-- Sidebar scroll-->
-				<div class="allleft-menu">
-					<!-- Sidebar navigation-->
-					<nav class="sidebar-nav">
-						<ul id="sidebarnav">
-							<li class="sidebar-item ">
-								<a  class="sidebar-link  has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-									<i class="mdi mdi-bell-ring-outline"></i>
-									<span class="hide-menu">外媒资讯</span>
-								</a>
-								<ul aria-expanded="false" class="collapse  first-level in">
-									<li class="sidebar-item">
-										<a th:classappend="${media_left == 'warning' ? 'active' : ''}" th:href="@{/system/warning}" class="sidebar-link"> <span class="hide-menu"> Twitter </span> </a>
-									</li>
-									<li class="sidebar-item">
-										<a th:classappend="${media_left == 'warningmsg' ? 'active' : ''}" th:href="@{/system/warningmsg}" class="sidebar-link"> <span class="hide-menu"> Facebook</span> </a>
-									</li>
-								</ul>
-							</li>
-
-
-						</ul>
-
-						<!-- <div class="wechat-logo-box">
-                            <svg class="icon" aria-hidden="true">
-                           <use xlink:href="#icon-wechat-logo"></use>
-                           </svg>
-                        </div> -->
-						<div class="home-footer__bottom-content__share__qrcode"  id ="home-footer__bottom-content__share__qrcode">
-							<!-- <img th:src="@{/assets/images/QRcode.jpg}" alt="wechat" style="width:120px;height:120px;border-radius:4px;"> -->
-						</div>
-
-
-
-					</nav>
-					<!-- End Sidebar navigation -->
-				</div>
-				<!-- End Sidebar scroll-->
-				<script th:src="@{/assets/libs/jquery/dist/jquery.min.js}"></script>
-				<script th:src="@{/dist/project.js}"></script>
-				<script th:src="@{/dist/baidu/baidu_statistics.js}"></script>
-				<script th:inline="javascript" type="text/javascript">
-					var ctxPath = /*[[@{/}]]*/'';
-					/* $(document).ready(function () {
-                        getwechatqrcode();
-                    }); */
-
-				</script>
-			</aside>
-			<!-- Sidebar scroll-->
-
-
-
-		<div class="page-wrapper" style="margin-left:-380px;margin-top:5px">
-
-
-			<html>
-
-			<body id="pageModule" class="pageModule">
-			<div id="pagescroll" class="pagescroll">
-				<div id="calendar"></div>
-
-			</div>
-
-			</body>
-			</html>
-			<script type="text/javascript">
-				SyntaxHighlighter.all();
-			</script>
-
-
-
-			<div class="right-filtrate bg-light-blue " id="condition" style="width:500px;height:100%">
-				<div
-						class="scrollable position-relative ps-container ps-theme-default"
-						style="width:450px;height:100%">
-					<li>
-
-					</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="/assets/libs/css3/style.css">
 
 </head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="share" style="margin-top: 150px">
+    <i class="fa fa-plus"></i>
+</div>
+<div class="one" style="margin-top: 150px">
+    <a class="nav-link dropdown-toggle waves-effect  waves-dark"
+       th:href="@{/system/warningmsg}">
+        <i class="fa fa-facebook" th:href="@{/system/warningmsg}"></i>
+    </a>
+
+</div>
+<div class="two" style="margin-top: 150px">
+    <a class="nav-link dropdown-toggle waves-effect  waves-dark"
+       th:href="@{/system/warning}">
+        <i class="fa fa-twitter" th:href="@{/system/warning}"></i>
+    </a>
+</div>
+<div class="three" style="margin-top: 150px">
+    <a class="nav-link dropdown-toggle waves-effect  waves-dark"
+       th:href="@{/system/warningmsg}">
+        <i class="fa fa-instagram" th:href="@{/system/warningmsg}"></i>
+    </a>
+</div>
+<!-- partial -->
+<script src='/assets/libs/css3/jquery.min.js'></script><script  src="/assets/libs/css3/script.js"></script>
+
+</body>
+</html>
+
 
 <body>
 <script th:src=" @{/dist/js/app.min.js}"></script>
@@ -127,54 +81,22 @@
 <script th:src="@{/dist/js/pages.js}"></script>
 <script th:src="@{/assets/libs/block-ui/jquery.blockUI.js}"></script>
 <script th:inline="javascript">
-	$('body').on('click', '.projectCheck', function () {
-		$('.projectCheck').each(function () {
-			if (!$(this).is(":checked")) {
-				$('#cstall').prop('checked', false);
-				return;
-			}
-		});
-	});
-
-	// 	// 顶部面包屑导航
-	//    function breadCrumbs(groupId){
-	// 		if(groupId){
-	// 			$.ajax({
-	//	    		url: ctxPath + 'project/names',
-	//	    		type: 'post',
-	//	    		dataType: 'json',
-	//	    		data: {
-	//	    			projectId: null,
-	//	    			groupId: groupId
-	//	    		},
-	//	    		success: function(res){
-	//	    			var html = '<li class="breadcrumb-item">监测管理</li>'+
-	//	    						'<li class="breadcrumb-item">'+res.groupName+'</li>'+
-	//	                        	'<li class="breadcrumb-item">方案列表</li>';
-	//	    			$('#breadCrumbs').html(html);
-	//	    			$('#groupName').html(res.groupName);
-	//	    		},
-	//	    		error: function(res){
-	//	    			console.log(res);
-	//                    var html = '<li class="breadcrumb-item">监测管理</li>'+
-	//                        '<li class="breadcrumb-item">暂无方案组</li>'+
-	//                        '<li class="breadcrumb-item">方案列表</li>';
-	//                    $('#breadCrumbs').html(html);
-	//                    $("#cstall").attr("disabled","disabled");
-	//                    $("#cst0").attr("disabled","disabled");
-	//	    		}
-	//	    	});
-	// 		}else{
-	// 			var html = '<li class="breadcrumb-item">监测管理</li>'+
-	//			             '<li class="breadcrumb-item">方案列表</li>';
-	// 			$('#breadCrumbs').html(html);
-	// 		}
-	// 	}
-
-	$('.navLi').click(function(){
-		jumpNavLocation($(this).data('type'), groupid, null);
-	})
+    $('body').on('click', '.projectCheck', function () {
+        $('.projectCheck').each(function () {
+            if (!$(this).is(":checked")) {
+                $('#cstall').prop('checked', false);
+                return;
+            }
+        });
+    });
+    $('.navLi').click(function(){
+        jumpNavLocation($(this).data('type'), groupid, null);
+    });
 </script>
+
 </body>
 
-</html>
+
+</div>
+</div>
+</head></html>
