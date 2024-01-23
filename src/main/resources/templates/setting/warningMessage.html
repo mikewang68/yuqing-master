@@ -33,6 +33,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">外媒情况</li>
                                     <li class="breadcrumb-item">Twitter & Facebook</li>
+
                                     <li class="breadcrumb-item"></li>
                                 </ol>
                             </nav>
@@ -40,7 +41,7 @@
                     </div>
                     <div class="col-lg-7 align-self-center ">
 
-                    </div>
+                       </div>
                 </div>
             </div>
             <!-- nav end-->
@@ -48,12 +49,121 @@
 
             <!-- content start -->
             <div class="table-responsive">
+
+                <!--bingzhuangtu -->
+                <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                </head>
+                <body>
+
+
+                <div style="height:500px;width:50%;">
+                    <canvas id="chartjs-radar-chart"></canvas>
+                </div>
+
+
+
+
+                <script src="../assets/libs/Chart.min.js"></script>
+
+                <script>
+
+                    window.chartColors = {
+                        red: 'rgb(255, 99, 132)',
+                        orange: 'rgb(255, 159, 64)',
+                        yellow: 'rgb(255, 205, 86)',
+                        green: 'rgb(75, 192, 192)',
+                        blue: 'rgb(54, 162, 235)',
+                        purple: 'rgb(153, 102, 255)',
+                        grey: 'rgb(201, 203, 207)'
+                    };
+
+                    window.randomScalingFactor = function () {
+                        return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+                    };
+
+
+
+
+                    var color = Chart.helpers.color;
+                    var radarConfig = {
+                        type: 'radar',
+                        data: {
+                            labels: [
+                                ["军事新闻", ""],
+                                ["热点新闻", ""], "运动新闻", ["娱乐圈", ""], "sports", "local", "news"
+                            ],
+                            datasets: [{
+                                label: "My First dataset",
+                                backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
+                                borderColor: window.chartColors.red,
+                                pointBackgroundColor: window.chartColors.red,
+                                data: [
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor()
+                                ]
+                            }, {
+                                label: "My Second dataset",
+                                backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
+                                borderColor: window.chartColors.blue,
+                                pointBackgroundColor: window.chartColors.blue,
+                                data: [
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor(),
+                                    randomScalingFactor()
+                                ]
+                            }, ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Facebook Chart'
+                            },
+                            scale: {
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    };
+
+
+
+                    window.myRadar = new Chart(document.getElementById("chartjs-radar-chart"), radarConfig);
+                </script>
+
+
+
+                </body>
+
+
+                </html>
+
+
                 <!-- line start -->
                 <div class="project-warning-title project-warning-list" style="">
                     <div id="app" style="width: 100%;height: 100%">
                         <div>
                             <el-input style="width: 180px;" type="text" v-model="searchText" placeholder="Search text"></el-input>
                             <el-button @click="filterTable">Search</el-button>
+                            <button id="csv" class="btn btn-danger">导出 CSV</button>
+
                         </div>
                         <el-table
                                 ref="filterTable"
@@ -88,6 +198,7 @@
                 <div class="prolist-warning-box" id="projectlist">
                     <!-- line start -->
                 </div>
+            </div>
 
             </div>
             <!-- maill list end -->
